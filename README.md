@@ -27,6 +27,8 @@ You may need the following tools.
 * To build and deploy your application, run the following in your shell:
 
 ```bash
+git clone https://github.com/mozammal/product-api.git
+
 cd product-api
 
 mvn clean test
