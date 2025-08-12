@@ -7,16 +7,26 @@ import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "products")
 public class ProductEntity {
 
-  @Id private String sku;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-  @Column(precision = 10, scale = 2)
+  @Column(nullable = false, precision = 10, scale = 2)
   private BigDecimal price;
 
+  @Column(nullable = false)
+  private String sku;
+
+  @Column(nullable = false)
   private String description;
+
+  @Column(nullable = false)
   private String category;
 
   protected ProductEntity() {}
@@ -26,6 +36,10 @@ public class ProductEntity {
     this.price = price;
     this.description = description;
     this.category = category;
+  }
+
+  public Long getId() {
+    return id;
   }
 
   public String getSku() {
