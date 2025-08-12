@@ -7,7 +7,7 @@ Both layers are loosely coupled, enabling clear separation of concerns, easier m
 
 
 The inbound adapter is the @RestController (ProductController), which handles HTTP requests and delegates to the business layer (application domain).
-- The inbound adapter is the @RestController (ProductController), which handles HTTP requests and delegates to the business layer (application domain).
+- The inbound adapter is the RestController which handles HTTP requests and delegates to the business layer (application domain).
 - The business layer applies the domain logic and interacts with the outbound adapter via dependency inversion.
 - The outbound adapter is the JpaProductRepository.
 - This repository interface is an output port, allowing the domain to remain independent of persistence details. The actual database interaction is handled by Spring Data JPA.
